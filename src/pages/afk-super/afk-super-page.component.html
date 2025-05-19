@@ -1,0 +1,30 @@
+<h1>AFK PAGE</h1>
+<hr/>
+
+<!-- Parentesis para emitir eventos -->
+<!-- Llaves cuadradas para asignar atributos -->
+<!-- Las señales nos permiten cambiar estados -->
+
+
+<!-- afkService es la instancia de nuestra funcion de dependencia para poder usar el servicio -->
+
+<section>
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      
+      <afk-character-add (nweCharacter)="afkService.addCharacter($event)"/>  
+
+    </div>
+
+    <div class="col-12 col-sm-6">
+
+      <afk-characters-list
+        listName="Listado de personajes `AFK Arena`"
+        [characters]="afkService.characters()"
+      />
+
+    </div>
+  </div>
+
+</section>
+ 

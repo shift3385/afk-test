@@ -1,0 +1,29 @@
+<h1>AFK PAGE</h1>
+
+<hr/>
+
+<section>
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <h3>Agregar:</h3>
+      <input type="text" class="form-control mb-2" title="name" placeholder="name" [value]="name()" (change)="name.set(txtName.value)" #txtName/>
+      <input type="number" class="form-control" title="skill" placeholder="skill" [value]="power()" (change)="power.set(+txtPower.value)" #txtPower/>
+      <button class="mt-2 btn btn-primary" (click)="addCharacter()">AGREGAR</button>
+    </div>
+
+    <div class="col-12 col-sm-6">
+      <ul>
+        @for (character of characters(); track character.id; let idx= $index) {
+          <!-- @if (character.power > 1000) { -->
+            <li>
+              <span>{{idx +1}} - {{character.name}}:</span>
+              <strong class="text-danger"> {{character.power}}</strong>
+            </li>
+          }
+
+        <!-- } -->
+      </ul>
+    </div>
+  </div>
+
+</section>
